@@ -12,7 +12,14 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 # Everything else here
-print("Hello world")
+print("Haluatko insinööriksi?\n\n")
+print("""Valitse numerolla ja paina enter
+1. Uusi peli
+2. Leaderboard
+3. Lisää kysymys
+4. Lopeta peli""")
+
+int(input())
 
 # TODO: Pelikoodi tähän
 
