@@ -1,7 +1,7 @@
 import random
 from typing import List
 
-from sqlalchemy import select
+from sqlalchemy import select, func
 from sqlalchemy.orm import sessionmaker, selectinload
 
 from src.database.db import engine
@@ -29,7 +29,7 @@ class Game:
             select(Question)
             .where(Question.category == self.category)
             .options(selectinload(Question.answers))
-            .order_by(Question.id)
+            .order_by(func.random())
             .limit(limit)
         )
 
